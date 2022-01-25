@@ -1,0 +1,44 @@
+#employee div{
+    border: 2px black dotted;
+    background-color: aqua;
+    padding-left: 5px;
+    width: 300px;
+    height: 400px;
+   
+    margin: 10px;
+    flex-basis: 100px;
+    
+}
+#employee div img{
+  width:100px ;
+  height: 100px;
+}
+
+
+
+#employee{
+    display: flex;
+}
+
+
+img{
+    width: 250;
+    height: 250;
+}
+
+header a{
+    
+    margin: 20px;
+    padding: 20px;
+    float: left;
+
+}
+header{
+    height: 100px;
+    background-color: rgb(125, 125, 153);
+}
+
+footer{
+    height: 100px;
+    background-color:cornflowerblue;
+}
