@@ -62,49 +62,6 @@ TheConstructor.allEmployee=[];
 
 
 
-function render(){
-   // document.write(`<tr><td> ${this.fullName}</td> <td> ${this.salary}</td></tr>`);
-   let theSection=document.getElementById('employee');
-   for(i=0;i<TheConstructor.allEmployee.length;i++){
-let theEmployee=TheConstructor.allEmployee[i];
-
-  
-let divEl=document.createElement('div');
-theSection.appendChild(divEl);
-
-let imgEl = document.createElement('img');
-divEl.appendChild(imgEl);
-imgEl.setAttribute('src', `./${theEmployee.imgurl}.jpg`|| theEmployee.imgurl);
-imgEl.setAttribute('alt',theEmployee.name);
-
- let pEmpId=document.createElement('p')
- divEl.appendChild(pEmpId);
- pEmpId.textContent=theEmployee.employeeID;
-
- let pEmpName=document.createElement('p');
- divEl.appendChild(pEmpName);
- pEmpName.textContent=`Name : ${theEmployee.fullName}`;
-
- let selectDept=document.createElement('p');
- divEl.appendChild(selectDept);
- selectDept.textContent=`department ${theEmployee.department}`;
-
- let selectlevel=document.createElement('p');
- divEl.appendChild(selectlevel);
- selectlevel.textContent=`level ${theEmployee.level}`;
-
-
-
- let pSalary=document.createElement('p');
-divEl.appendChild(pSalary);
-pSalary.textContent=theEmployee.salary;
-}
-
-
-}
-
-
-
 
 let firstEmploye= new TheConstructor (firstEmployeId,"Ghazi","Administration","Senior",firstEmployeNetSalary,"Ghazi");
 let secondEmploye= new TheConstructor (secondEmployeId,"Lana ali","Finance","Senior",secondEmployeNetSalary,"Lana");
@@ -164,3 +121,68 @@ function gettingItem(){
 }
 
 gettingItem();
+
+
+
+function render(){
+    // document.write(`<tr><td> ${this.fullName}</td> <td> ${this.salary}</td></tr>`);
+    let theSection=document.getElementById('accForm');
+    for(i=0;i<TheConstructor.allEmployee.length;i++){
+ let theEmployee=TheConstructor.allEmployee[i];
+ 
+   
+ let divEl=document.createElement('div');
+ theSection.appendChild(divEl);
+ 
+let tableE=createElement('table');
+divEl.appendChild(table);
+
+let trE=createElement('tr');
+tableE.appendChild(trE);
+
+let thE=createElement('th');
+trE.appendChild(thE);
+thE.textContent='department Name';
+
+let thE1=createElement('th');
+trE.appendChild(thE1);
+thE.textContent=theEmployee;
+
+
+
+
+
+  let pEmpId=document.createElement('p')
+  divEl.appendChild(pEmpId);
+  pEmpId.textContent=theEmployee.employeeID;
+ 
+  let pEmpName=document.createElement('p');
+  divEl.appendChild(pEmpName);
+  pEmpName.textContent=`Name : ${theEmployee.fullName}`;
+ 
+  let selectDept=document.createElement('p');
+  divEl.appendChild(selectDept);
+  selectDept.textContent=`department ${theEmployee.department}`;
+ 
+  let selectlevel=document.createElement('p');
+  divEl.appendChild(selectlevel);
+  selectlevel.textContent=`level ${theEmployee.level}`;
+ 
+ 
+ 
+  let pSalary=document.createElement('p');
+ divEl.appendChild(pSalary);
+ pSalary.textContent=theEmployee.salary;
+ }
+ 
+ 
+ }
+ 
+
+
+
+
+
+
+
+
