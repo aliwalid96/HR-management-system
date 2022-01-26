@@ -13,6 +13,17 @@ function randomNumber(min, max) { // min and max included
     }
 }
 
+function randomIdNumber(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+  let firstEmployeId=randomIdNumber(0,9999)
+  let secondEmployeId=randomIdNumber(0,9999)
+  let thirdEmployeId=randomIdNumber(0,9999)
+  let forthEmployeId=randomIdNumber(0,9999)
+  let fifthEmployeId=randomIdNumber(0,9999)
+  let sixthEmployeId=randomIdNumber(0,9999)
+  let seventhEmployeId=randomIdNumber(0,9999)
+
 let firstEmployeSalary= checkTheSalar('Senior');
 let secondEmployeSalary= checkTheSalar('Senior');
 let thirdEmployeSalary= checkTheSalar('Senior');
@@ -54,7 +65,7 @@ theSection.appendChild(divEl);
 
 let imgEl = document.createElement('img');
 divEl.appendChild(imgEl);
-imgEl.setAttribute('src', `./${this.imgurl}.jpg`);
+imgEl.setAttribute('src', `./${this.imgurl}.jpg`||this.imgurl);
 imgEl.setAttribute('alt',this.name);
 
  let pEmpId=document.createElement('p')
@@ -83,13 +94,14 @@ pSalary.textContent=this.salary;
 
 }
 
-let firstEmploye= new TheConstructor (1000,"Ghazi","Administration","Senior",firstEmployeNetSalary,"Ghazi");
-let secondEmploye= new TheConstructor (1001,"Lana ali","Finance","Senior",secondEmployeNetSalary,"Lana");
-let thirdtEmploye= new TheConstructor (1002,"Tamara Ayoub","Marketing	","Senior",thirdEmployeNetSalary,"Tamara");
-let fourthEmploye= new TheConstructor (1003,"Safi Walid","Administration","Mid-Senior",fourthEmployeNetSalary,"Safi");
-let fifthEmploye= new TheConstructor (1004,"OmarZaid","Development	","Senior",fifthEmployeNetSalary,"Omar");
-let sixthEmploye= new TheConstructor (1005,"Rana Saleh","Development","Junior",sexthEmployeNetSalary,"Rana");
-let seventhEmploye= new TheConstructor (1006,"Hadi","Finance","Mid-Senior",seventhEmployeNetSalary,"Hadi");
+
+let firstEmploye= new TheConstructor (firstEmployeId,"Ghazi","Administration","Senior",firstEmployeNetSalary,"Ghazi");
+let secondEmploye= new TheConstructor (secondEmployeId,"Lana ali","Finance","Senior",secondEmployeNetSalary,"Lana");
+let thirdtEmploye= new TheConstructor (thirdEmployeId,"Tamara Ayoub","Marketing	","Senior",thirdEmployeNetSalary,"Tamara");
+let fourthEmploye= new TheConstructor (forthEmployeId,"Safi Walid","Administration","Mid-Senior",fourthEmployeNetSalary,"Safi");
+let fifthEmploye= new TheConstructor (fifthEmployeId,"OmarZaid","Development	","Senior",fifthEmployeNetSalary,"Omar");
+let sixthEmploye= new TheConstructor (sixthEmployeId,"Rana Saleh","Development","Junior",sexthEmployeNetSalary,"Rana");
+let seventhEmploye= new TheConstructor (seventhEmployeId,"Hadi","Finance","Mid-Senior",seventhEmployeNetSalary,"Hadi");
 
 firstEmploye.render();
 secondEmploye.render();
@@ -105,16 +117,16 @@ employeeForm.addEventListener('submit', addNewEmployee);
 function addNewEmployee(event){
   event.preventDefault();
   
-  let fullName = event.target.name.value;
+  let fullName = event.target.fullName.value;
   let employeeId = event.target.name.value;  
-  let imgUrl=event.target.name.value;
-  let department=event.target.selectDept;
-  let level=event.target.selectlevel;
-  let salary=event.target.name.value;
+  let imgUrl=event.target.imgUrl.value;
+  let department=event.target.departure.value;
+  let level=event.target.level.value;
+  let salary= checkTheSalar(level);
 
 
 
-  let newEmployee = new (employeeId,fullName,department,level,salary,imgUrl);
+  let newEmployee = new TheConstructor (employeeId,fullName,department,level,salary,imgUrl);
 
   newEmployee.render();
 
