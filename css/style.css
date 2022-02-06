@@ -42,3 +42,12 @@ footer{
     height: 100px;
     background-color:cornflowerblue;
 }
+table{
+    padding:20px;
+    border: 1px;
+    margin: 100px;
+    
+}
+tr td th{
+    border: 10px;
+}
