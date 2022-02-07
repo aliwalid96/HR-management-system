@@ -1,5 +1,6 @@
 
 
+
 function gettingItem() {
   let stringObj = localStorage.getItem('employeeD');
   //console.log(stringObj);
